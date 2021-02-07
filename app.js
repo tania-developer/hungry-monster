@@ -8,8 +8,7 @@
 
 
 document.getElementById('button-addon2').addEventListener("click",function(){
-        const searchValue = document.getElementById('search').value;
-        
+        const searchValue = document.getElementById('search').value;       
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchValue}`
         fetch(url)
             .then(res => res.json())
@@ -21,39 +20,39 @@ document.getElementById('button-addon2').addEventListener("click",function(){
          const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
          array.forEach(meal => {
-            const mealName = meal.strMeal;
-            const img = meal.strMealThumb;
-
             const mealDiv = document.createElement('div');
             mealDiv.className = ('single-meal')
             const mealDivInfo = `
-            <img src="${img}" alt="">
-            <h5>${mealName}</h5>`
+            <img onclick = "displayMealName('${meal.strMeal}')" class = "image" src="${meal.strMealThumb}" alt="">
+            <h5 class='name'>${meal.strMeal}</h5>`
             mealDiv.innerHTML=mealDivInfo;
             containerDiv.appendChild(mealDiv);
-            console.log(mealName,img);
          });
-        //  for (let i = 0; i < array.length; i++) {
-        //      const meal = array[i];
-        //      const mealName = meal.strMeal;
-        //      const img = meal.strMealThumb;
+        }
 
-        //      const mealDiv = document.createElement('div');
-        //      mealDiv.className = ('single-meal')
-        //      const mealDivInfo = `
-        //      <img src="${img}" alt="">
-        //      <h5>${mealName}</h5>`
-        //      mealDiv.innerHTML=mealDivInfo;
-        //      containerDiv.appendChild(mealDiv);
-        //      console.log(mealName,img);
-             
-        //  }
-     }
+ const displayMealName = name => {
+     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
+     fetch(url)
+        .then(res => res.json())
+        .then(data => mealInfo(data));
+ }
 
+ const mealInfo = meal => {
+     const array = meal.meals;
+     array.forEach(meal => {
 
-
-// const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchLetter}`
-// fetch(url)
-//     .then(res => res.json())
-//     .then(data => console.log(data));
-
+        const  mealInfoDiv= document.getElementById('meal-info');
+        mealInfoDiv.innerHTML = `
+        <img src="${meal.strMealThumb}" alt="">
+        <h2 >${meal.strMeal}</h2>
+        <h5> ingredients</h5>
+        <p>${meal.strIngredient1}</P>
+        <p>${meal.strIngredient2}</P>
+        <p>${meal.strIngredient3}</P>
+        <p>${meal.strIngredient4}</P>
+        <p>${meal.strIngredient5}</P>
+        `
+     });
+     
+ }
+        

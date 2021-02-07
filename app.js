@@ -14,17 +14,25 @@ document.getElementById('button-addon2').addEventListener("click",function(){
         fetch(url)
             .then(res => res.json())
             .then(data => showMeal(data)); 
-            //     const mealName = data.meals[0];
-            //     console.log(mealName);
             });
-    //  });
+
 
      const showMeal = data => {
+         const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
          for (let i = 0; i < array.length; i++) {
              const meal = array[i];
-             
-             console.log(meal);
+             const mealName = meal.strMeal;
+             const img = meal.strMealThumb;
+
+             const mealDiv = document.createElement('div');
+             mealDiv.className = ('single-meal')
+             const mealDivInfo = `
+             <img src="${img}" alt="">
+             <h3>${mealName}`
+             mealDiv.innerHTML=mealDivInfo;
+             containerDiv.appendChild(mealDiv);
+             console.log(mealName,img);
              
          }
      }

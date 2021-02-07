@@ -20,21 +20,34 @@ document.getElementById('button-addon2').addEventListener("click",function(){
      const showMeal = data => {
          const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
-         for (let i = 0; i < array.length; i++) {
-             const meal = array[i];
-             const mealName = meal.strMeal;
-             const img = meal.strMealThumb;
+         array.forEach(meal => {
+            const mealName = meal.strMeal;
+            const img = meal.strMealThumb;
 
-             const mealDiv = document.createElement('div');
-             mealDiv.className = ('single-meal')
-             const mealDivInfo = `
-             <img src="${img}" alt="">
-             <h5>${mealName}</h5>`
-             mealDiv.innerHTML=mealDivInfo;
-             containerDiv.appendChild(mealDiv);
-             console.log(mealName,img);
+            const mealDiv = document.createElement('div');
+            mealDiv.className = ('single-meal')
+            const mealDivInfo = `
+            <img src="${img}" alt="">
+            <h5>${mealName}</h5>`
+            mealDiv.innerHTML=mealDivInfo;
+            containerDiv.appendChild(mealDiv);
+            console.log(mealName,img);
+         });
+        //  for (let i = 0; i < array.length; i++) {
+        //      const meal = array[i];
+        //      const mealName = meal.strMeal;
+        //      const img = meal.strMealThumb;
+
+        //      const mealDiv = document.createElement('div');
+        //      mealDiv.className = ('single-meal')
+        //      const mealDivInfo = `
+        //      <img src="${img}" alt="">
+        //      <h5>${mealName}</h5>`
+        //      mealDiv.innerHTML=mealDivInfo;
+        //      containerDiv.appendChild(mealDiv);
+        //      console.log(mealName,img);
              
-         }
+        //  }
      }
 
 

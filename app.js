@@ -29,7 +29,7 @@ document.getElementById('button-addon2').addEventListener("click",function(){
              mealDiv.className = ('single-meal')
              const mealDivInfo = `
              <img src="${img}" alt="">
-             <h3>${mealName}`
+             <h5>${mealName}</h5>`
              mealDiv.innerHTML=mealDivInfo;
              containerDiv.appendChild(mealDiv);
              console.log(mealName,img);

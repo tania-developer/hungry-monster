@@ -1,6 +1,7 @@
 #search-container, #meal-info{
     width: 40%;
     margin: auto;
+    margin-bottom: 100px;
 }
 
 #meal-container{
@@ -44,4 +45,8 @@
 .color{
     color: orangered;
     margin-right: 10px;
+}
+
+#nav-img{
+    width: 80px;
 }

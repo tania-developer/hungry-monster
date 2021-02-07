@@ -1,4 +1,4 @@
-#search-container{
+#search-container, #meal-info{
     width: 40%;
     margin: auto;
 }
@@ -27,4 +27,21 @@
     padding: 5% 0;
     text-align: center;
     font-size: 16px;
+}
+
+#meal-info img{
+    height: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#meal-info h2,#meal-info h5{
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.color{
+    color: orangered;
+    margin-right: 10px;
 }

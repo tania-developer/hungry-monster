@@ -46,11 +46,11 @@ document.getElementById('button-addon2').addEventListener("click",function(){
         <img src="${meal.strMealThumb}" alt="">
         <h2 >${meal.strMeal}</h2>
         <h5> ingredients</h5>
-        <p>${meal.strIngredient1}</P>
-        <p>${meal.strIngredient2}</P>
-        <p>${meal.strIngredient3}</P>
-        <p>${meal.strIngredient4}</P>
-        <p>${meal.strIngredient5}</P>
+        <p><i class="fas fa-check-square color"></i>${meal.strIngredient1}</P>
+        <p><i class="fas fa-check-square color"></i>${meal.strIngredient2}</P>
+        <p><i class="fas fa-check-square color"></i>${meal.strIngredient3}</P>
+        <p><i class="fas fa-check-square color"></i>${meal.strIngredient4}</P>
+        <p><i class="fas fa-check-square color"></i>${meal.strIngredient5}</P>
         `
      });
      

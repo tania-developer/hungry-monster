@@ -1,11 +1,3 @@
-// const searchBtn = document.getElementById('button-addon2');
-// searchBtn.addEventListener('click', () => {
-//     const searchLetter = document.getElementById('search').value;
-//     getValue(searchLetter);
-// });
-
-
-
 
 document.getElementById('button-addon2').addEventListener("click",function(){
         const searchValue = document.getElementById('search').value;       
@@ -19,6 +11,7 @@ document.getElementById('button-addon2').addEventListener("click",function(){
      const showMeal = data => {
          const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
+         containerDiv.innerHTML = '';
          array.forEach(meal => {
             const mealDiv = document.createElement('div');
             mealDiv.className = ('single-meal')
@@ -51,6 +44,7 @@ document.getElementById('button-addon2').addEventListener("click",function(){
         <p><i class="fas fa-check-square color"></i>${meal.strIngredient3}</P>
         <p><i class="fas fa-check-square color"></i>${meal.strIngredient4}</P>
         <p><i class="fas fa-check-square color"></i>${meal.strIngredient5}</P>
+       
         `
      });
      

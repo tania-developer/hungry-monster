@@ -42,6 +42,8 @@ const displayError = error => {
 
  const mealInfo = meal => {
      const array = meal.meals;
+     const errorTag = document.getElementById('error-msg');
+     errorTag.innerText = '';
      array.forEach(meal => {
 
         const  mealInfoDiv= document.getElementById('meal-info');

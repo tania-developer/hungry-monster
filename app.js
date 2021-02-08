@@ -4,14 +4,24 @@ document.getElementById('button-addon2').addEventListener("click",function(){
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchValue}`
         fetch(url)
             .then(res => res.json())
-            .then(data => showMeal(data)); 
+            .then(data => showMeal(data))
+            .catch(error => displayError("Oops something went wrong. Try again and search by your favorite food's first letter"));
             });
 
+
+const displayError = error => {
+    const errorTag = document.getElementById('error-msg');
+    errorTag.innerText = error;
+}
 
      const showMeal = data => {
          const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
          containerDiv.innerHTML = '';
+         
+         const errorTag = document.getElementById('error-msg');
+         errorTag.innerText = '';
+
          array.forEach(meal => {
             const mealDiv = document.createElement('div');
             mealDiv.className = ('single-meal')

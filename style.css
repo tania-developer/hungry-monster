@@ -55,3 +55,7 @@
 #navbarNav{
     margin-right: 50px;
 }
+
+#error-msg{
+    text-align: center;
+}

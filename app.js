@@ -18,6 +18,9 @@ const displayError = error => {
          const containerDiv = document.getElementById('meal-container');
          const array = data.meals;
          containerDiv.innerHTML = '';
+
+         const  mealInfoDiv= document.getElementById('meal-info');
+         mealInfoDiv.innerHTML = '';
          
          const errorTag = document.getElementById('error-msg');
          errorTag.innerText = '';
